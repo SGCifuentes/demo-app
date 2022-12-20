@@ -1,7 +1,8 @@
 import * as React from 'react';
-import { Product } from '../../domain/models/Product';
-import { productService } from '../../domain/services/Product.service';
-import Button from './atoms/Button';
+import { Product } from '../../../domain/models/Product';
+import { productService } from '../../../domain/services/Product.service';
+import { Button } from '../atoms/Button/Button';
+import styles from './ProductList.module.css';
 
 type ProductListProps = {
     onSelectProduct: (product: Product) => void;
@@ -19,12 +20,13 @@ export const ProductList: React.FC<ProductListProps> = ({
     return (
         <ul>
             {products.map((product) => (
-                <li key={product.id}>
+                <li key={product.id} className={styles.product}>
                     <Button
                         onClick={() => {
                             onSelectProduct(product);
                         }}
-                        title={product.title}
+                        label={product.title}
+                        primary
                     />
                 </li>
             ))}

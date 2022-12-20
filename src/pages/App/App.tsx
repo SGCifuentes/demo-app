@@ -1,5 +1,5 @@
 import React from 'react';
-import { ProductList } from './ProductList';
+import { ProductList } from '../../infrastructure/components/ProductList/ProductList';
 import { Cart } from '../../domain/models/Cart';
 import { Product } from '../../domain/models/Product';
 import { cartService } from '../../domain/services/Cart.service';
